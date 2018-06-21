@@ -10,20 +10,16 @@ class WxController extends Controller
 
     public function message()
     {
+        file_put_contents('1.txt','1212121');
 
         $config = [
-            'app_id' => 'wxda0c59636f633af7',
-            'secret' => '730e2436918458c90be350931bc8e0a2',
-            'token'  =>'springlee',
-
-            'log' => [
-                'level' => 'debug',
-                'file' => __DIR__.'/wechat.log',
-            ],
+            'app_id' => 'wx264849d75610eab1',
+            'secret' => 'c0b4de891e03326a326c557681ec45be',
+            'token'  => 'springlee',
+            'response_type' => 'array',
         ];
         $app = Factory::officialAccount($config);
         $app->server->push(function ($message){
-
             return '你好';
         });
         $response = $app->server->serve();

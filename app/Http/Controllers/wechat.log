@@ -1,0 +1,6 @@
+[2018-06-21 09:31:49] NULL.DEBUG: Request received: {"method":"GET","uri":"http://shop.test//wx/message","content-type":null,"content":""} 
+[2018-06-21 09:31:49] NULL.DEBUG: Server response created: {"content":"<xml><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[你好]]></Content><ToUserName><![CDATA[]]></ToUserName><FromUserName><![CDATA[]]></FromUserName><CreateTime>1529573509</CreateTime></xml>"} 
+[2018-06-21 09:31:53] NULL.DEBUG: Request received: {"method":"GET","uri":"http://shop.test/wx/message","content-type":null,"content":""} 
+[2018-06-21 09:31:53] NULL.DEBUG: Server response created: {"content":"<xml><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[你好]]></Content><ToUserName><![CDATA[]]></ToUserName><FromUserName><![CDATA[]]></FromUserName><CreateTime>1529573513</CreateTime></xml>"} 
+[2018-06-21 09:32:34] NULL.DEBUG: Request received: {"method":"GET","uri":"http://shop.test/wx/message","content-type":null,"content":""} 
+[2018-06-21 09:32:34] NULL.DEBUG: Server response created: {"content":"success"} 
