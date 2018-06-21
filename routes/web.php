@@ -13,7 +13,7 @@
 
 
 Route::get('/', 'PagesController@root')->name('root');
-Route::post('/wx/message', 'WxController@message')->name('wx.message');
+Route::any('/wx/message', 'WxController@message')->name('wx.message');
 
 Auth::routes();
 
