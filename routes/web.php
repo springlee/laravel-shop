@@ -18,6 +18,10 @@ Route::any('/wx/message', 'WxController@message')->name('wx.message');
 Route::get('/wx/oauth_callback', 'WxController@oauth_callback')->name('wx.oauth_callback');
 Route::get('/wx/profile', 'WxController@profile')->name('wx.profile');
 
+
+Route::redirect('/', '/products')->name('root');
+Route::get('products', 'ProductsController@index')->name('products.index');
+
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() {
