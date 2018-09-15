@@ -3,21 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\OrderRequest;
-use App\Services\CartService;
+use App\Models\Order;
+use App\Models\UserAddress;
 use App\Services\OrderService;
 use Illuminate\Http\Request;
-use App\Jobs\CloseOrder;
-use App\Models\ProductSku;
-use App\Models\UserAddress;
-use App\Models\Order;
-use Carbon\Carbon;
 
 class OrdersController extends Controller
 {
 
     public function store(OrderRequest $request, OrderService $orderService)
     {
-        $user    = $request->user();
+        $user = $request->user();
         $address = UserAddress::find($request->input('address_id'));
 
         return $orderService->store($user, $address, $request->input('remark'), $request->input('items'));

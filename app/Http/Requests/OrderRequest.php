@@ -43,4 +43,11 @@ class OrderRequest extends Request
             'items.*.amount' => ['required', 'integer', 'min:1'],
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'address_id' => '地址'
+        ];
+    }
 }
