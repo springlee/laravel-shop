@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
                 $config['mode']         = 'dev';
                 $config['log']['level'] = Logger::DEBUG;
                 $config['notify_url'] = route('payment.alipay.notify');
-                $config['notify_url'] = 'http://requestbin.fullcontact.com/v7k4bjv7';
+                $config['notify_url'] = 'http://requestbin.fullcontact.com/12jwqt91';
 
                 $config['return_url'] = route('payment.alipay.return');
             } else {
