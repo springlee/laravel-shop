@@ -9,7 +9,7 @@
         "barryvdh/laravel-debugbar": "^3.1",
         "barryvdh/laravel-ide-helper": "^2.4",
         "doctrine/dbal": " ~2.3",
-        "encore/laravel-admin": "1.5.18",
+        "encore/laravel-admin": "^1.6",
         "endroid/qr-code": "^3.4",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "438b62c0efb7424ea54ddd2b74d47f45",
+    "content-hash": "715d09003bc53ba37aff1d35d0eedbf0",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -988,16 +988,16 @@
         },
         {
             "name": "encore/laravel-admin",
-            "version": "v1.5.18",
+            "version": "v1.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "49553f7f4cd2ef14583c65427b9deb663e2e5c9c"
+                "reference": "2c7de6c1d8e3aad3c300a1ba3e8fa0f82403845d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/49553f7f4cd2ef14583c65427b9deb663e2e5c9c",
-                "reference": "49553f7f4cd2ef14583c65427b9deb663e2e5c9c",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/2c7de6c1d8e3aad3c300a1ba3e8fa0f82403845d",
+                "reference": "2c7de6c1d8e3aad3c300a1ba3e8fa0f82403845d",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1010,7 +1010,7 @@
                 "doctrine/dbal": "2.*",
                 "laravel/framework": "~5.5",
                 "php": ">=7.0.0",
-                "symfony/dom-crawler": "~3.1"
+                "symfony/dom-crawler": "~3.1|~4.0"
             },
             "require-dev": {
                 "fzaninotto/faker": "~1.4",
@@ -1061,7 +1061,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2018-08-10T08:09:04+00:00"
+            "time": "2018-11-01T02:13:08+00:00"
         },
         {
             "name": "endroid/installer",
