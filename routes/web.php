@@ -50,6 +50,8 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('payment/{order}/alipay', 'PaymentController@payByAlipay')->name('payment.alipay');
 //        Route::get('payment/alipay/return', 'PaymentController@alipayReturn')->name('payment.alipay.return');
         Route::get('payment/{order}/wechat', 'PaymentController@payByWechat')->name('payment.wechat');
+        Route::post('payment/{order}/installment', 'PaymentController@payByInstallment')->name('payment.installment');
+
         Route::post('orders/{order}/received', 'OrdersController@received')->name('orders.received');
         Route::get('orders/{order}/review', 'OrdersController@review')->name('orders.review.show');
         Route::post('orders/{order}/review', 'OrdersController@sendReview')->name('orders.review.store');
@@ -58,6 +60,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('coupon_codes/{code}', 'CouponCodesController@show')->name('coupon_codes.show');
 
         Route::post('crowdfunding_orders', 'OrdersController@crowdfunding')->name('crowdfunding_orders.store');
+
     });
 });
 Route::get('products/{product}', 'ProductsController@show')->name('products.show');
