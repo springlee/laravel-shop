@@ -43,4 +43,6 @@ Route::group([
     $router->post('crowdfunding_products', 'CrowdfundingProductsController@store');
     $router->get('crowdfunding_products/{id}/edit', 'CrowdfundingProductsController@edit');
     $router->put('crowdfunding_products/{id}', 'CrowdfundingProductsController@update');
+    //111112
+    
 });
