@@ -54,24 +54,7 @@ class RefundInstallmentOrder implements ShouldQueue
                 continue;
             }
         }
-        // 设定一个全部退款成功的标志位
-        $allSuccess = true;
-        // 再次遍历所有还款计划
-        foreach ($installment->items as $item) {
-            // 如果该还款计划已经还款，但退款状态不是成功
-            if ($item->paid_at &&
-                $item->refund_status !== InstallmentItem::REFUND_STATUS_SUCCESS) {
-                // 则将标志位记为 false
-                $allSuccess = false;
-                break;
-            }
-        }
-        // 如果所有退款都成功，则将对应商品订单的退款状态修改为退款成功
-        if ($allSuccess) {
-            $this->order->update([
-                'refund_status' => Order::REFUND_STATUS_SUCCESS,
-            ]);
-        }
+        $installment->installment->refreshRefundStatus();
     }
 
     protected function refundInstallmentItem(InstallmentItem $item)
@@ -87,7 +70,7 @@ class RefundInstallmentOrder implements ShouldQueue
                     'refund_fee'     => $item->base * 100, // 要退款的订单金额，单位分，分期付款的退款只退本金
                     'out_refund_no'  => $refundNo, // 退款订单号
                     // 微信支付的退款结果并不是实时返回的，而是通过退款回调来通知，因此这里需要配上退款回调接口地址
-                    'notify_url'     => '' // todo,
+                    'notify_url'     => ngrok_url('installments.wechat.refund_notify'),
                 ]);
                 // 将还款计划退款状态改成退款中
                 $item->update([
