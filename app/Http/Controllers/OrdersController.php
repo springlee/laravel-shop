@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\SeckillOrderRequest;
 use App\Events\OrderReviewd;
 use App\Exceptions\CouponCodeUnavailableException;
 use App\Exceptions\InvalidRequestException;
@@ -154,5 +154,14 @@ class OrdersController extends Controller
         ]);
 
         return $order;
+    }
+
+    public function seckill(SeckillOrderRequest $request, OrderService $orderService)
+    {
+        $user    = $request->user();
+        $address = UserAddress::find($request->input('address_id'));
+        $sku     = ProductSku::find($request->input('sku_id'));
+
+        return $orderService->seckill($user, $address, $sku);
     }
 }
